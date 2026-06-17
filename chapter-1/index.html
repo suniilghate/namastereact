@@ -4,10 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Namaste React</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 </head>
 <body>
-    <div id="root">
-        <h1>Namaste React Hello World</h1>
+    <div id="mainHtml">
+        <h1>Namaste React Hello World using HTML</h1>
     </div>
+    <div id="rootHtml"></div>
+    <script>
+        const headingElm = document.createElement("h1");
+        headingElm.innerHTML = "Namaste React Hello World using Javascript";
+
+        const rootElm = document.getElementById("rootHtml");
+        rootElm.appendChild(headingElm);
+    </script>
+
+    <div id="root"></div>
+    
+    <script>
+        const heading = React.createElement("h1", {}, "Namaste React Hello World using React");
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(heading);
+    </script>
+
+    
 </body>
 </html>
